@@ -1,7 +1,7 @@
 // Токен: 8121c997-2813-48cf-a521-b118f084a101
 // Идентификатор: cohort-59
 
-export class Api {
+class Api {
     constructor(options) {
       this._url = options.url;
       this._token = options.token;
