@@ -4,6 +4,7 @@
 
 /* Page */
 @import url(../blocks/page/page.css);
+@import url(../blocks/page/__root/page__root.css);
 @import url(../blocks/page/__content/page__content.css);
 
 /* Header */

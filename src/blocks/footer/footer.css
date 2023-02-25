@@ -1,18 +1,13 @@
 .footer {
+    margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 200px;
-    margin: 0;
-    width: 100%;
+    padding: 0;
+    width: 880px;
 }
 
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 934px) {
     .footer {
-        padding: 0 100px;
-    }
-}
-
-@media screen and (max-width: 990px) {
-    .footer {
+        width: 100%;
         padding: 0 50px;
     }
 }

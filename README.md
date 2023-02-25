@@ -11,7 +11,7 @@
 
 ### Blog for travelers where you can post places you've visited, change information about yourself, and put likes.
 
-In this project, I've ported the project [Mesto](https://github.com/IrinaSfv/mesto) to React.js.
+In this project, I've ported the [Mesto blog](https://github.com/IrinaSfv/mesto) to React.js.
 
 ## Installation
 * Run `GitBash` (or `Terminal` on MacOS);

@@ -1,5 +1,6 @@
 .elements {
     box-sizing: border-box;
+    width: 100%;
     padding: 0 200px;
     margin: 0;
 }
@@ -23,7 +24,6 @@
 }
 
 @media screen and (max-width: 568px) {
-    /* мобильные устройства */
     .elements {
         padding: 0 19px;
     }

@@ -9,81 +9,84 @@ import AddPlaceForm from "./AddPlaceForm";
 import ImagePopup from "./ImagePopup";
 
 function App() {
-    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-    const [selectedCard, setSelectedCard] = React.useState(null);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState(null);
 
-    function handleEditAvatarClick() {
-        setIsEditAvatarPopupOpen(true);
-    }
+  function handleEditAvatarClick() {
+    setIsEditAvatarPopupOpen(true);
+  }
 
-    function handleEditProfileClick() {
-        setIsEditProfilePopupOpen(true);
-    }
+  function handleEditProfileClick() {
+    setIsEditProfilePopupOpen(true);
+  }
 
-    function handleAddPlaceClick() {
-        setIsAddPlacePopupOpen(true);
-    }
+  function handleAddPlaceClick() {
+    setIsAddPlacePopupOpen(true);
+  }
 
-    function closeAllPopups() {
-        setIsEditAvatarPopupOpen(false);
-        setIsEditProfilePopupOpen(false);
-        setIsAddPlacePopupOpen(false);
-        setSelectedCard(null);
-    }
+  function closeAllPopups() {
+    setIsEditAvatarPopupOpen(false);
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setSelectedCard(null);
+  }
 
-    function handleCardClick(card) {
-        setSelectedCard(card);
-    }
+  function handleCardClick(card) {
+    setSelectedCard(card);
+  }
 
   return (
-    <div className="page">
+    <>
       <Header />
-      <Main 
-      onEditProfile={handleEditProfileClick} 
-      onAddPlace={handleAddPlaceClick} 
-      onEditAvatar={handleEditAvatarClick} 
-      onCardClick={handleCardClick}  
+      <Main
+        onEditProfile={handleEditProfileClick}
+        onAddPlace={handleAddPlaceClick}
+        onEditAvatar={handleEditAvatarClick}
+        onCardClick={handleCardClick}
       />
       <Footer />
 
-      <PopupWithForm 
-      type="edit-popup" 
-      name="editPopup" 
-      title="Редактировать профиль" 
-      submitTitle="Сохранить"
-      isOpen={isEditProfilePopupOpen}
-      children={<EditProfileForm />} 
-      onClose={closeAllPopups} 
-      />
+      <PopupWithForm
+        type="edit-popup"
+        name="editPopup"
+        title="Редактировать профиль"
+        submitTitle="Сохранить"
+        isOpen={isEditProfilePopupOpen}
+        onClose={closeAllPopups}
+      >
+        <EditProfileForm />
+      </PopupWithForm>
 
-      <PopupWithForm 
-      type="add-popup" 
-      name="addPopup" 
-      title="Новое место"
-      submitTitle="Добавить" 
-      isOpen={isAddPlacePopupOpen}
-      children={<AddPlaceForm />} 
-      onClose={closeAllPopups}  
-      />
+      <PopupWithForm
+        type="add-popup"
+        name="addPopup"
+        title="Новое место"
+        submitTitle="Добавить"
+        isOpen={isAddPlacePopupOpen}
+        onClose={closeAllPopups}
+      >
+        <AddPlaceForm />
+      </PopupWithForm>
 
-      <PopupWithForm 
-      type="new-avatar-popup" 
-      name="newAvatarPopup" 
-      title="Обновить аватар" 
-      submitTitle="Обновить"
-      isOpen={isEditAvatarPopupOpen}
-      children={<EditAvatarForm />}
-      onClose={closeAllPopups}   
-      />
+      <PopupWithForm
+        type="new-avatar-popup"
+        name="newAvatarPopup"
+        title="Обновить аватар"
+        submitTitle="Обновить"
+        isOpen={isEditAvatarPopupOpen}
+        onClose={closeAllPopups}
+      >
+        <EditAvatarForm />
+      </PopupWithForm>
 
-      <ImagePopup 
-      type="picture-popup"
-      card={selectedCard}
-      onClose={closeAllPopups}
+      <ImagePopup
+        type="picture-popup"
+        card={selectedCard}
+        onClose={closeAllPopups}
       />
-    </div>
+    </>
   );
 }
 

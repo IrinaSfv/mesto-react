@@ -1,15 +1,3 @@
-//Карточки
-// const cardList = new Section({ 
-//     items: initialCards,  
-//     renderer: (item) => {
-//       const cardElement = createCards(item);
-//       cardList.addItem(cardElement);
-//     }
-//   }, '.elements__list'
-// );
-
-export const cardsContainer = document.querySelector('.card-template');
-
 //Валидация 
 export const checkForms = {
   formSelector: '.popup__form',
