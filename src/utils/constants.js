@@ -8,13 +8,13 @@ export const checkForms = {
   errorClass: 'popup__error_visible'
 };
 
-//Переменные для редактирования аватара
-export const buttonAvatar = document.querySelector('.profile__avatar-edit-button');
+// //Переменные для редактирования аватара
+// export const buttonAvatar = document.querySelector('.profile__avatar-edit-button');
 
-//Переменные для редактирования профиля
-export const buttonEdit = document.querySelector('.profile__edit-button');
-export const inputName = document.querySelector('#name-input');
-export const inputJob = document.querySelector('#userInfo-input');
+// //Переменные для редактирования профиля
+// export const buttonEdit = document.querySelector('.profile__edit-button');
+// export const inputName = document.querySelector('#name-input');
+// export const inputJob = document.querySelector('#userInfo-input');
 
-//Переменные для добавления карточки
-export const buttonAdd = document.querySelector('.profile__add-button');
+// //Переменные для добавления карточки
+// export const buttonAdd = document.querySelector('.profile__add-button');

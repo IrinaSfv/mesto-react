@@ -1,8 +1,8 @@
 import React from "react";
 
-function ImagePopup({type, card, onClose}) {
+function ImagePopup({type, card, onClose, onEscClick, onOverlayClick}) {
     return (
-        <div className={`popup ${type} ${card && "popup_opened"}`}>
+        <div onKeyDown={onEscClick} onClick={onOverlayClick} className={`popup ${type} ${card && "popup_opened"}`}>
             <div className={`popup__container ${type}__container`}>
                 <button className={`popup__close-button ${type}__close-button`} type="button" aria-label="Кнопка закрытия данного попапа" onClick={onClose}></button>
                 <figure className="picture-popup__figure">
