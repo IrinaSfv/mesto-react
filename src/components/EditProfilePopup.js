@@ -14,7 +14,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, submitTitle, onEscCli
     useEffect(() => {
         setName(currentUser.name);
         setDescription(currentUser.about);
-    }, [currentUser]);
+    }, [currentUser, isOpen]);
 
     function changeName(e) {
         setName(e.target.value);
@@ -47,9 +47,9 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser, submitTitle, onEscCli
             onEscClick={onEscClick}
             onOverlayClick={onOverlayClick}
         >
-            <input onChange={changeName} className="popup__input popup__input_type_name" type="text" name="name" defaultValue={name || ""} placeholder="Имя" id="name-input" minLength="2" maxLength="40" required />
+            <input onChange={changeName} className="popup__input popup__input_type_name" type="text" name="name" value={name || ""} placeholder="Имя" id="name-input" minLength="2" maxLength="40" required />
             <span id="name-input-error" className="popup__error"></span>
-            <input onChange={changeDescription} className="popup__input popup__input_type_user-info" type="text" name="about" defaultValue={description || ""} placeholder="О себе" id="userInfo-input" minLength="2" maxLength="200" required />
+            <input onChange={changeDescription} className="popup__input popup__input_type_user-info" type="text" name="about" value={description || ""} placeholder="О себе" id="userInfo-input" minLength="2" maxLength="200" required />
             <span id="userInfo-input-error" className="popup__error"></span>
         </PopupWithForm>
     );

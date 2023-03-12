@@ -1,16 +1,17 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, submitTitle, onEscClick, onOverlayClick }) {
     const avatarRef = useRef(); // записываем объект, возвращаемый хуком, в переменную
 
     function handleSubmit(e) {
         e.preventDefault();
-
+    
         onUpdateAvatar({
             avatar: avatarRef.current.value, // получаем нужное свойство объекта
         });
+        avatarRef.current.value = "";
     }
 
     return (

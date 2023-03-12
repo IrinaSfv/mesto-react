@@ -1,10 +1,15 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace, submitTitle, onEscClick, onOverlayClick }) {
     const [place, setPlace] = useState("");
     const [link, setLink] = useState("");
+
+    useEffect(() => {
+        setPlace("");
+        setLink("");
+    }, [isOpen]);
 
     function changePlace(e) {
         setPlace(e.target.value);
@@ -35,9 +40,9 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, submitTitle, onEscClick, o
             onEscClick={onEscClick}
             onOverlayClick={onOverlayClick}
         >
-            <input onChange={changePlace} className="popup__input popup__input_type_place" type="text" name="place" defaultValue={place || ""} placeholder="Название" id="place-input" minLength="2" maxLength="30" required />
+            <input onChange={changePlace} className="popup__input popup__input_type_place" type="text" name="place" value={place || ""} placeholder="Название" id="place-input" minLength="2" maxLength="30" required />
             <span id="place-input-error" className="popup__error"></span>
-            <input onChange={changeLink} className="popup__input popup__input_type_link" type="url" name="pictureSrc" defaultValue={link || ""} placeholder="Ссылка на картинку" id="link-input" required />
+            <input onChange={changeLink} className="popup__input popup__input_type_link" type="url" name="pictureSrc" value={link || ""} placeholder="Ссылка на картинку" id="link-input" required />
             <span id="link-input-error" className="popup__error"></span>
         </PopupWithForm>
     );
